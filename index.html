@@ -6,360 +6,404 @@
 <title>Soledar Partners · Seating Planner</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg:        #E5E0D8;
-  --surface:   #F8F4ED;
-  --surface2:  #FBF8F2;
-  --bronze:    #B8945F;
-  --bronze2:   #D4B888;
-  --bronze-dim:rgba(184,148,95,0.13);
-  --dark:      #1A1614;
-  --mid:       #6B5F52;
-  --muted:     #9B8E7E;
-  --border:    #E5DED1;
-  --red:       #c0392b;
-  --r-sm: 6px; --r-md: 10px;
-}
+:root{--bg:#E5E0D8;--surface:#F8F4ED;--surface2:#FBF8F2;--bronze:#B8945F;--bronze2:#D4B888;--bdim:rgba(184,148,95,0.15);--dark:#1A1614;--mid:#6B5F52;--muted:#9B8E7E;--border:#E5DED1;--red:#c0392b;--green:#2e7d5e;}
 *{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--dark);font-family:'Outfit',sans-serif;font-weight:300;min-height:100vh;}
-
-/* HEADER */
-.header{background:var(--surface);border-bottom:1px solid var(--border);padding:1.4rem 2rem 1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
-.header-left{}
-.eyebrow{font-size:8px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);margin-bottom:5px;}
-.header h1{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--dark);letter-spacing:.02em;line-height:1.1;}
+body{background:var(--bg);color:var(--dark);font-family:'Outfit',sans-serif;font-weight:300;min-height:100vh;-webkit-tap-highlight-color:transparent;}
+.header{background:var(--surface);border-bottom:1px solid var(--border);padding:1rem 1.2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem;}
+.eyebrow{font-size:8px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze);margin-bottom:4px;}
+.header h1{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--dark);}
 .header h1 span{color:var(--bronze);}
-.header-sub{font-size:10px;color:var(--muted);margin-top:4px;letter-spacing:.04em;}
-.stats-row{display:flex;gap:1.5rem;align-items:center;}
+.header-sub{font-size:10px;color:var(--muted);margin-top:2px;}
+.stats-row{display:flex;gap:1rem;align-items:center;}
 .stat{text-align:center;}
-.stat-n{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--bronze);line-height:1;}
-.stat-l{font-size:8px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:1px;}
-.stat-div{width:1px;height:36px;background:var(--border);}
-
-/* TOOLBAR */
-.toolbar{background:var(--surface2);border-bottom:1px solid var(--border);padding:.7rem 1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
-.toolbar-label{font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
-.ctrl-group{display:flex;align-items:center;gap:.5rem;}
-.ctrl-group label{font-size:11px;color:var(--mid);}
-.btn-sm{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);color:var(--mid);font-size:11px;font-family:'Outfit',sans-serif;font-weight:400;padding:5px 12px;cursor:pointer;transition:border-color .15s,color .15s;}
-.btn-sm:hover{border-color:var(--bronze);color:var(--bronze);}
-.btn-sm.active{background:var(--bronze);border-color:var(--bronze);color:white;}
-.number-input{display:flex;align-items:center;gap:4px;}
-.number-input button{width:24px;height:24px;background:var(--surface);border:1px solid var(--border);border-radius:4px;cursor:pointer;font-size:14px;color:var(--mid);display:flex;align-items:center;justify-content:center;line-height:1;transition:border-color .15s;}
-.number-input button:hover{border-color:var(--bronze);color:var(--bronze);}
-.number-input span{font-size:13px;font-weight:500;color:var(--dark);min-width:22px;text-align:center;}
-.divider-v{width:1px;height:28px;background:var(--border);}
-.reset-all{margin-left:auto;background:transparent;border:1px solid var(--border);border-radius:var(--r-sm);color:var(--muted);font-size:10px;font-family:'Outfit',sans-serif;padding:5px 12px;cursor:pointer;transition:border-color .15s,color .15s;}
-.reset-all:hover{border-color:var(--bronze);color:var(--bronze);}
-
-/* MAIN */
-.main{display:flex;min-height:calc(100vh - 160px);}
-
-/* SIDEBAR */
-.sidebar{width:200px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);padding:1rem .9rem;display:flex;flex-direction:column;gap:.8rem;}
-.sidebar-title{font-size:8px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--bronze);padding-bottom:7px;border-bottom:1px solid var(--border);}
-.pool{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:4px;padding:2px 0;min-height:60px;}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--bronze);line-height:1;}
+.stat-l{font-size:8px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;}
+.stat-div{width:1px;height:30px;background:var(--border);}
+.toolbar{background:var(--surface2);border-bottom:1px solid var(--border);padding:.6rem 1rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;}
+.tlabel{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.btn-group{display:flex;gap:4px;}
+.bsm{background:var(--surface);border:1px solid var(--border);border-radius:6px;color:var(--mid);font-size:11px;font-family:'Outfit',sans-serif;padding:5px 12px;cursor:pointer;transition:all .15s;-webkit-user-select:none;user-select:none;}
+.bsm.active{background:var(--bronze);border-color:var(--bronze);color:white;}
+.nctrl{display:flex;align-items:center;gap:4px;}
+.nctrl label{font-size:11px;color:var(--mid);}
+.nbtn{width:26px;height:26px;background:var(--surface);border:1px solid var(--border);border-radius:5px;cursor:pointer;font-size:15px;color:var(--mid);display:flex;align-items:center;justify-content:center;}
+.nval{font-size:13px;font-weight:500;color:var(--dark);min-width:20px;text-align:center;}
+.dvv{width:1px;height:24px;background:var(--border);}
+.rbtn{margin-left:auto;background:transparent;border:1px solid var(--border);border-radius:6px;color:var(--muted);font-size:10px;font-family:'Outfit',sans-serif;padding:5px 10px;cursor:pointer;}
+.main{display:flex;min-height:calc(100vh - 145px);}
+.sidebar{width:185px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);padding:.9rem .8rem;display:flex;flex-direction:column;gap:.7rem;}
+.stitle{font-size:8px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);padding-bottom:6px;border-bottom:1px solid var(--border);}
+.pool{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:3px;padding:2px 0;}
 .pool::-webkit-scrollbar{width:3px;}
 .pool::-webkit-scrollbar-thumb{background:var(--bronze2);border-radius:2px;}
-.guest-card{background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--sc,var(--bronze2));border-radius:var(--r-sm);padding:7px 9px;cursor:grab;user-select:none;transition:border-color .15s,box-shadow .15s;}
-.guest-card:hover{border-color:var(--bronze);border-left-color:var(--sc,var(--bronze));box-shadow:0 1px 5px rgba(184,148,95,.1);}
-.guest-card:active{cursor:grabbing;opacity:.6;}
-.guest-card.type-sp{--sc:#7c6db0;}
-.guest-card.type-lp{--sc:#2e7d5e;}
-.guest-card.type-bb{--sc:#b8945f;}
-.guest-card.type-am{--sc:#a0522d;}
-.guest-card.type-host{--sc:#c9a84c;}
-.g-name{font-size:11px;font-weight:500;color:var(--dark);line-height:1.3;}
-.g-company{font-size:9px;color:var(--muted);margin-top:1px;}
-.g-veg{display:inline-block;font-size:8px;font-weight:600;color:#2e7d5e;background:rgba(46,125,94,.1);border-radius:3px;padding:1px 4px;margin-top:2px;text-transform:uppercase;letter-spacing:.03em;}
-.legend{border-top:1px solid var(--border);padding-top:9px;}
-.legend-title{font-size:8px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
-.legend-item{display:flex;align-items:center;gap:6px;font-size:9px;color:var(--mid);margin-bottom:4px;}
-.legend-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0;}
-.pool-empty{font-size:10px;color:var(--bronze2);text-align:center;padding:1rem 0;opacity:.7;}
-
-/* TABLE AREA */
-.table-area{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;gap:1.5rem;background:var(--bg);}
-.tables-container{display:flex;gap:3rem;align-items:center;justify-content:center;flex-wrap:wrap;}
-.table-block{display:flex;flex-direction:column;align-items:center;gap:.5rem;}
-.table-label{font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);border:1px solid var(--bronze2);border-radius:20px;padding:3px 12px;}
-
-.table-wrap{position:relative;}
-.table-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:1px solid var(--bronze2);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1;background:var(--surface);}
-.table-name{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--bronze);letter-spacing:.06em;text-align:center;line-height:1.4;}
-.table-date{color:var(--muted);letter-spacing:.08em;margin-top:3px;text-transform:uppercase;}
-
-/* SEAT */
-.seat{position:absolute;border:1px dashed var(--bronze2);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;z-index:2;background:var(--surface);transition:border-color .15s,background .15s,box-shadow .15s;}
-.seat-num{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:7px;color:var(--bronze2);letter-spacing:.04em;}
-.seat-empty-label{font-size:8px;color:var(--bronze2);opacity:.45;}
-.seat.drag-over{background:var(--bronze-dim);border-color:var(--bronze);border-style:solid;box-shadow:0 0 0 2px rgba(184,148,95,.15);}
-.seat.occupied{border-style:solid;border-color:var(--bronze2);background:var(--surface2);}
-.seat-stripe{position:absolute;bottom:0;left:0;right:0;height:2px;border-radius:0 0 var(--r-sm) var(--r-sm);}
-.seat-content{text-align:center;padding:3px 5px;width:100%;}
-.seat-name{font-size:9px;font-weight:500;color:var(--dark);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.seat-co{font-size:8px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.seat-veg-dot{display:inline-block;width:4px;height:4px;background:#2e7d5e;border-radius:50%;margin-left:2px;vertical-align:middle;}
-.remove-btn{position:absolute;top:-7px;right:-7px;width:15px;height:15px;background:var(--surface);border:1px solid var(--border);border-radius:50%;color:var(--muted);font-size:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;transition:background .12s,color .12s,border-color .12s;}
-.remove-btn:hover{background:var(--red);color:white;border-color:var(--red);}
-
-.drag-hint{font-size:10px;color:var(--muted);letter-spacing:.05em;transition:opacity .3s;}
+.gc{background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--sc,var(--bronze2));border-radius:6px;padding:7px 8px;cursor:pointer;-webkit-user-select:none;user-select:none;transition:all .15s;}
+.gc.sel{background:var(--bdim);border-color:var(--bronze);border-left-color:var(--bronze);box-shadow:0 0 0 2px rgba(184,148,95,.2);}
+.gc.sp{--sc:#7c6db0;}.gc.lp{--sc:#2e7d5e;}.gc.bb{--sc:#b8945f;}.gc.am{--sc:#a0522d;}.gc.host{--sc:#c9a84c;}
+.gn{font-size:11px;font-weight:500;color:var(--dark);line-height:1.3;}
+.gco{font-size:9px;color:var(--muted);margin-top:1px;}
+.gv{display:inline-block;font-size:8px;font-weight:600;color:var(--green);background:rgba(46,125,94,.1);border-radius:3px;padding:1px 4px;margin-top:2px;text-transform:uppercase;}
+.legend{border-top:1px solid var(--border);padding-top:8px;}
+.ltitle{font-size:8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.li{display:flex;align-items:center;gap:5px;font-size:9px;color:var(--mid);margin-bottom:4px;}
+.ld{width:7px;height:7px;border-radius:2px;flex-shrink:0;}
+.pempty{font-size:10px;color:var(--bronze);text-align:center;padding:.8rem 0;opacity:.8;}
+.thint{font-size:10px;color:var(--muted);text-align:center;padding:4px 6px;background:var(--bdim);border-radius:5px;margin-top:4px;line-height:1.4;}
+.table-area{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.2rem;background:var(--bg);overflow:auto;}
+.seat{position:absolute;border:1px dashed var(--bronze2);border-radius:6px;display:flex;align-items:center;justify-content:center;background:var(--surface);cursor:pointer;transition:all .2s;-webkit-user-select:none;user-select:none;}
+.seat.hl{border-color:var(--bronze);border-style:solid;background:var(--bdim);box-shadow:0 0 0 3px rgba(184,148,95,.25);}
+.seat.occ{border-style:solid;border-color:var(--bronze2);background:var(--surface2);}
+.seat.head{border-color:var(--bronze);border-width:1.5px;}
+.snum{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:7px;color:var(--bronze2);letter-spacing:.03em;white-space:nowrap;}
+.selbl{font-size:8px;color:var(--bronze2);opacity:.4;}
+.sstripe{position:absolute;bottom:0;left:0;right:0;height:2px;border-radius:0 0 6px 6px;}
+.scont{text-align:center;padding:3px 4px;width:100%;}
+.sname{font-size:9px;font-weight:500;color:var(--dark);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sco{font-size:8px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.svd{display:inline-block;width:4px;height:4px;background:var(--green);border-radius:50%;margin-left:2px;vertical-align:middle;}
+.rmv{position:absolute;top:-7px;right:-7px;width:16px;height:16px;background:var(--surface);border:1px solid var(--border);border-radius:50%;color:var(--muted);font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;z-index:10;}
+.tcround{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:1px solid var(--bronze2);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1;background:var(--surface);}
+.tcrect{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--surface);border:1.5px solid var(--bronze2);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1;}
+.tname{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--bronze);letter-spacing:.06em;text-align:center;line-height:1.4;}
+.tdate{color:var(--muted);letter-spacing:.08em;margin-top:3px;text-transform:uppercase;font-size:7px;}
+@media(max-width:480px){
+  .main{flex-direction:column;}
+  .sidebar{width:100%;max-height:190px;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;padding:.6rem;}
+  .pool{flex-direction:row;flex-wrap:nowrap;overflow-x:auto;overflow-y:visible;gap:5px;padding:0;}
+  .legend{display:none;}.stitle{display:none;}.thint{display:none;}
+  .gc{flex-shrink:0;min-width:85px;}
+  .table-area{min-height:380px;}
+}
 </style>
 </head>
 <body>
-
-<!-- HEADER -->
 <div class="header">
-  <div class="header-left">
+  <div>
     <div class="eyebrow">Soledar Partners · Event Seating Planner</div>
     <h1>Bucherer <span>Dinner</span></h1>
     <div class="header-sub">1 October 2026 · Geneva</div>
   </div>
   <div class="stats-row">
-    <div class="stat"><div class="stat-n" id="stat-seated">0</div><div class="stat-l">Seated</div></div>
+    <div class="stat"><div class="stat-n" id="ss">0</div><div class="stat-l">Seated</div></div>
     <div class="stat-div"></div>
-    <div class="stat"><div class="stat-n" id="stat-unassigned">17</div><div class="stat-l">Unassigned</div></div>
+    <div class="stat"><div class="stat-n" id="su">17</div><div class="stat-l">Unassigned</div></div>
     <div class="stat-div"></div>
     <div class="stat"><div class="stat-n">17</div><div class="stat-l">Confirmed</div></div>
   </div>
 </div>
-
-<!-- TOOLBAR -->
 <div class="toolbar">
-  <span class="toolbar-label">Tables</span>
-  <div class="ctrl-group">
-    <button class="btn-sm active" id="btn-1table" onclick="setTableCount(1)">1 table</button>
-    <button class="btn-sm" id="btn-2table" onclick="setTableCount(2)">2 tables</button>
+  <span class="tlabel">Tables</span>
+  <div class="btn-group">
+    <button class="bsm active" id="b1t" onclick="setTC(1)">1 table</button>
+    <button class="bsm" id="b2t" onclick="setTC(2)">2 tables</button>
   </div>
-  <div class="divider-v"></div>
-  <div class="ctrl-group">
-    <label>Table 1 seats</label>
-    <div class="number-input">
-      <button onclick="changeSeats(1,-1)">−</button>
-      <span id="seats-t1">10</span>
-      <button onclick="changeSeats(1,1)">+</button>
-    </div>
+  <div class="dvv"></div>
+  <span class="tlabel">Shape</span>
+  <div class="btn-group">
+    <button class="bsm active" id="brd" onclick="setShape('round')">Round</button>
+    <button class="bsm" id="brect" onclick="setShape('rect')">Rectangular</button>
   </div>
-  <div class="ctrl-group" id="t2-ctrl" style="display:none;">
-    <label>Table 2 seats</label>
-    <div class="number-input">
-      <button onclick="changeSeats(2,-1)">−</button>
-      <span id="seats-t2">7</span>
-      <button onclick="changeSeats(2,1)">+</button>
-    </div>
+  <div class="dvv"></div>
+  <div class="nctrl">
+    <label>Table 1</label>
+    <button class="nbtn" onclick="chSeats(1,-1)">−</button>
+    <span class="nval" id="nv1">10</span>
+    <button class="nbtn" onclick="chSeats(1,1)">+</button>
   </div>
-  <button class="reset-all" onclick="resetAll()">Clear all seats</button>
+  <div class="nctrl" id="t2c" style="display:none">
+    <label>Table 2</label>
+    <button class="nbtn" onclick="chSeats(2,-1)">−</button>
+    <span class="nval" id="nv2">7</span>
+    <button class="nbtn" onclick="chSeats(2,1)">+</button>
+  </div>
+  <button class="rbtn" onclick="resetAll()">Clear all</button>
 </div>
-
-<!-- MAIN -->
 <div class="main">
   <div class="sidebar">
-    <div class="sidebar-title">Confirmed guests</div>
-    <div class="pool" id="pool" ondragover="event.preventDefault()" ondrop="dropToPool(event)"></div>
+    <div class="stitle">Tap guest → tap seat</div>
+    <div class="pool" id="pool"></div>
+    <div class="thint" id="thint">Tap a guest to select, then tap any seat</div>
     <div class="legend">
-      <div class="legend-title">Lead type</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#7c6db0"></div>Soledar Partners</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#2e7d5e"></div>LP</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#b8945f"></div>BB</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#a0522d"></div>AM</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#c9a84c"></div>Host (Bucherer)</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#2e7d5e;border-radius:50%"></div>Vegetarian menu</div>
+      <div class="ltitle">Lead type</div>
+      <div class="li"><div class="ld" style="background:#7c6db0"></div>Soledar Partners</div>
+      <div class="li"><div class="ld" style="background:#2e7d5e"></div>LP</div>
+      <div class="li"><div class="ld" style="background:#b8945f"></div>BB</div>
+      <div class="li"><div class="ld" style="background:#a0522d"></div>AM</div>
+      <div class="li"><div class="ld" style="background:#c9a84c"></div>Host</div>
+      <div class="li"><div class="ld" style="background:#2e7d5e;border-radius:50%"></div>Vegetarian</div>
     </div>
   </div>
-
-  <div class="table-area" id="table-area">
-    <div class="tables-container" id="tables-container"></div>
-    <div class="drag-hint" id="drag-hint">Drag a guest from the list onto any seat</div>
+  <div class="table-area">
+    <div id="tc" style="display:flex;gap:2.5rem;align-items:center;justify-content:center;flex-wrap:wrap;"></div>
   </div>
 </div>
-
 <script>
-const GUESTS=[
-  {id:"g1", name:"Lionel Pastor",       company:"Soledar Partners",type:"sp",  veg:false},
-  {id:"g2", name:"Alessandra M.",       company:"Soledar Partners",type:"sp",  veg:false},
-  {id:"g3", name:"Beatrice Bianco",     company:"Soledar Partners",type:"sp",  veg:false},
-  {id:"g4", name:"Laurent Foix",        company:"Bucherer",        type:"host",veg:false},
-  {id:"g5", name:"Jules Bertrand",      company:"Celeste",         type:"am",  veg:false},
-  {id:"g6", name:"Adam Feldheim",       company:"Amitis Capital",  type:"lp",  veg:false},
-  {id:"g7", name:"Giorgia Baistrocchi", company:"Pictet",          type:"bb",  veg:false},
-  {id:"g8", name:"Ashton Soniat",       company:"",                type:"lp",  veg:false},
-  {id:"g9", name:"Brian Johnson",       company:"Previse",         type:"lp",  veg:false},
-  {id:"g10",name:"Ani Veillet",         company:"Azura",           type:"bb",  veg:false},
-  {id:"g11",name:"Mirko Ivanda",        company:"",                type:"lp",  veg:false},
-  {id:"g12",name:"Adam Sinn",           company:"",                type:"lp",  veg:false},
-  {id:"g13",name:"Daniel Ziaei",        company:"Mirabaud",        type:"lp",  veg:false},
-  {id:"g14",name:"Vincent Oswald",      company:"Active Capital",  type:"bb",  veg:true},
-  {id:"g15",name:"Sebastien Boucrat",   company:"Breega",          type:"bb",  veg:true},
-  {id:"g16",name:"Giovanni Martinez",   company:"Novum Partners",  type:"bb",  veg:false},
-  {id:"g17",name:"Jens Farm",           company:"InPact",          type:"bb",  veg:false}
+var GUESTS=[
+  {id:"g1",name:"Lionel Pastor",company:"Soledar Partners",type:"sp",veg:false},
+  {id:"g2",name:"Alessandra M.",company:"Soledar Partners",type:"sp",veg:false},
+  {id:"g3",name:"Beatrice Bianco",company:"Soledar Partners",type:"sp",veg:false},
+  {id:"g4",name:"Laurent Foix",company:"Bucherer",type:"host",veg:false},
+  {id:"g5",name:"Jules Bertrand",company:"Celeste",type:"am",veg:false},
+  {id:"g6",name:"Adam Feldheim",company:"Amitis Capital",type:"lp",veg:false},
+  {id:"g7",name:"Giorgia B.",company:"Pictet",type:"bb",veg:false},
+  {id:"g8",name:"Ashton Soniat",company:"",type:"lp",veg:false},
+  {id:"g9",name:"Brian Johnson",company:"Previse",type:"lp",veg:false},
+  {id:"g10",name:"Ani Veillet",company:"Azura",type:"bb",veg:false},
+  {id:"g11",name:"Mirko Ivanda",company:"",type:"lp",veg:false},
+  {id:"g12",name:"Adam Sinn",company:"",type:"lp",veg:false},
+  {id:"g13",name:"Daniel Ziaei",company:"Mirabaud",type:"lp",veg:false},
+  {id:"g14",name:"Vincent Oswald",company:"Active Capital",type:"bb",veg:true},
+  {id:"g15",name:"Sebastien Boucrat",company:"Breega",type:"bb",veg:true},
+  {id:"g16",name:"Giovanni Martinez",company:"Novum Partners",type:"bb",veg:false},
+  {id:"g17",name:"Jens Farm",company:"InPact",type:"bb",veg:false}
 ];
-const TYPE_COLORS={sp:"#7c6db0",lp:"#2e7d5e",bb:"#b8945f",am:"#a0522d",host:"#c9a84c","":"#9B8E7E"};
+var COLORS={sp:"#7c6db0",lp:"#2e7d5e",bb:"#b8945f",am:"#a0522d",host:"#c9a84c","":"#9B8E7E"};
+var numT=1, shape="round";
+var tsizes={1:10,2:7};
+var asgn={};
+var selG=null;
 
-// State
-let numTables=1;
-let tableSizes={1:10,2:7};
-// assignments: "t1_0", "t1_1" ... "t2_0" etc → guestId
-let assignments={};
-let draggingId=null;
-
-function seatPositions(n,cx,cy,r){
-  return Array.from({length:n},(_,i)=>{
-    const a=(2*Math.PI*i/n)-Math.PI/2;
-    return {x:cx+r*Math.cos(a),y:cy+r*Math.sin(a)};
-  });
+function selGuest(id){
+  selG=(selG===id)?null:id;
+  buildPool(); buildTables(); updateHint();
 }
 
-function tableSize(tIdx){
-  const n=tableSizes[tIdx];
-  if(n<=8) return {wrap:300,cx:150,cy:150,r:118,sw:78,sh:52,tcW:130,tcH:85,tfSize:13,tdSize:8};
-  if(n<=12) return {wrap:360,cx:180,cy:180,r:145,sw:82,sh:54,tcW:145,tcH:90,tfSize:14,tdSize:8};
-  return {wrap:440,cx:220,cy:220,r:178,sw:86,sh:56,tcW:165,tcH:100,tfSize:14,tdSize:8};
+function tapSeat(key){
+  if(!selG) return;
+  var prev=null;
+  var keys=Object.keys(asgn);
+  for(var i=0;i<keys.length;i++){if(asgn[keys[i]]===selG){prev=keys[i];break;}}
+  if(prev) delete asgn[prev];
+  asgn[key]=selG;
+  selG=null;
+  buildPool(); buildTables(); updateStats(); updateHint();
 }
 
-function buildTables(){
-  const cont=document.getElementById("tables-container");
-  cont.innerHTML="";
-  for(let t=1;t<=numTables;t++){
-    const block=document.createElement("div");
-    block.className="table-block";
-    if(numTables>1){
-      const lbl=document.createElement("div");
-      lbl.className="table-label";
-      lbl.textContent="Table "+t;
-      block.appendChild(lbl);
-    }
-    const wrap=buildTableWrap(t);
-    block.appendChild(wrap);
-    cont.appendChild(block);
+function remSeat(key,e){
+  e.stopPropagation();
+  delete asgn[key];
+  selG=null;
+  buildPool(); buildTables(); updateStats(); updateHint();
+}
+
+function unassignSeat(key){
+  delete asgn[key];
+  buildPool(); buildTables(); updateStats(); updateHint();
+}
+
+function setTC(n){
+  numT=n;
+  if(n===1){
+    var keys=Object.keys(asgn);
+    for(var i=0;i<keys.length;i++){if(keys[i].indexOf("t2_")===0) delete asgn[keys[i]];}
   }
+  document.getElementById("b1t").className="bsm"+(n===1?" active":"");
+  document.getElementById("b2t").className="bsm"+(n===2?" active":"");
+  document.getElementById("t2c").style.display=n===2?"flex":"none";
+  buildTables(); buildPool(); updateHint();
 }
 
-function buildTableWrap(tIdx){
-  const n=tableSizes[tIdx];
-  const s=tableSize(tIdx);
-  const wrap=document.createElement("div");
-  wrap.className="table-wrap";
-  wrap.style.width=s.wrap+"px";
-  wrap.style.height=s.wrap+"px";
-
-  // Center oval
-  const tc=document.createElement("div");
-  tc.className="table-center";
-  tc.style.width=s.tcW+"px";
-  tc.style.height=s.tcH+"px";
-  tc.innerHTML=`<div class="table-name" style="font-size:${s.tfSize}px">Bucherer<br>Dinner</div><div class="table-date" style="font-size:${s.tdSize}px">1 Oct 2026</div>`;
-  wrap.appendChild(tc);
-
-  // Seats
-  seatPositions(n,s.cx,s.cy,s.r).forEach((pos,i)=>{
-    const key="t"+tIdx+"_"+i;
-    const seat=document.createElement("div");
-    seat.className="seat";
-    seat.id="seat-"+key;
-    seat.style.width=s.sw+"px";
-    seat.style.height=s.sh+"px";
-    seat.style.left=(pos.x-s.sw/2)+"px";
-    seat.style.top=(pos.y-s.sh/2)+"px";
-    const num=document.createElement("div");
-    num.className="seat-num";
-    num.textContent=i+1;
-    seat.appendChild(num);
-    if(assignments[key]){renderOccupied(seat,key,assignments[key]);}
-    else{const l=document.createElement("div");l.className="seat-empty-label";l.textContent="empty";seat.appendChild(l);}
-    seat.ondragover=e=>{e.preventDefault();seat.classList.add("drag-over");};
-    seat.ondragleave=()=>seat.classList.remove("drag-over");
-    seat.ondrop=e=>{e.preventDefault();seat.classList.remove("drag-over");dropToSeat(key);};
-    wrap.appendChild(seat);
-  });
-  return wrap;
+function setShape(s){
+  shape=s;
+  document.getElementById("brd").className="bsm"+(s==="round"?" active":"");
+  document.getElementById("brect").className="bsm"+(s==="rect"?" active":"");
+  buildTables();
 }
 
-function renderOccupied(seat,key,gid){
-  const g=GUESTS.find(x=>x.id===gid);if(!g)return;
-  seat.classList.add("occupied");
-  seat.innerHTML="";
-  const stripe=document.createElement("div");stripe.className="seat-stripe";stripe.style.background=TYPE_COLORS[g.type]||"#9B8E7E";
-  const content=document.createElement("div");content.className="seat-content";
-  content.innerHTML=`<div class="seat-name">${g.name}${g.veg?'<span class="seat-veg-dot"></span>':""}</div><div class="seat-co">${g.company||"&nbsp;"}</div>`;
-  const rm=document.createElement("button");rm.className="remove-btn";rm.textContent="×";rm.onclick=()=>removeSeat(key);
-  const num=document.createElement("div");num.className="seat-num";num.textContent=key.split("_")[1]*1+1;
-  seat.appendChild(stripe);seat.appendChild(content);seat.appendChild(rm);seat.appendChild(num);
+function chSeats(t,d){
+  var n=tsizes[t]+d;
+  if(n<4) n=4; if(n>22) n=22;
+  var keys=Object.keys(asgn);
+  for(var i=0;i<keys.length;i++){
+    if(keys[i].indexOf("t"+t+"_")===0){
+      if(parseInt(keys[i].split("_")[1])>=n) delete asgn[keys[i]];
+    }
+  }
+  tsizes[t]=n;
+  document.getElementById("nv"+t).textContent=n;
+  buildTables(); buildPool(); updateStats();
 }
+
+function resetAll(){selG=null;asgn={};buildPool();buildTables();updateStats();updateHint();}
 
 function buildPool(){
-  const pool=document.getElementById("pool");pool.innerHTML="";
-  const taken=new Set(Object.values(assignments));
-  const remaining=GUESTS.filter(g=>!taken.has(g.id));
-  if(remaining.length===0){
-    const empty=document.createElement("div");empty.className="pool-empty";empty.textContent="All guests seated";
-    pool.appendChild(empty);
-  } else {
-    remaining.forEach(g=>{
-      const card=document.createElement("div");
-      card.className=`guest-card type-${g.type}`;card.id="card-"+g.id;card.draggable=true;
-      card.innerHTML=`<div class="g-name">${g.name}</div><div class="g-company">${g.company||"&nbsp;"}</div>${g.veg?"<span class='g-veg'>veg</span>":""}`;
-      card.ondragstart=()=>{draggingId=g.id;};
-      pool.appendChild(card);
-    });
+  var pool=document.getElementById("pool");
+  pool.innerHTML="";
+  var taken={};
+  var keys=Object.keys(asgn);
+  for(var i=0;i<keys.length;i++) taken[asgn[keys[i]]]=true;
+  var rem=[];
+  for(var i=0;i<GUESTS.length;i++){if(!taken[GUESTS[i].id]) rem.push(GUESTS[i]);}
+  if(!rem.length){
+    var e=document.createElement("div");e.className="pempty";e.textContent="All guests seated";
+    pool.appendChild(e);updateStats();return;
+  }
+  for(var i=0;i<rem.length;i++){
+    (function(g){
+      var c=document.createElement("div");
+      c.className="gc "+g.type+(selG===g.id?" sel":"");
+      c.innerHTML="<div class='gn'>"+g.name+"</div><div class='gco'>"+(g.company||"&nbsp;")+"</div>"+(g.veg?"<span class='gv'>veg</span>":"");
+      c.onclick=function(){selGuest(g.id);};
+      c.draggable=true;
+      c.ondragstart=function(ev){ev.dataTransfer.setData("gid",g.id);selG=g.id;};
+      pool.appendChild(c);
+    })(rem[i]);
   }
   updateStats();
 }
 
-function dropToSeat(key){
-  if(!draggingId)return;
-  const prev=Object.keys(assignments).find(k=>assignments[k]===draggingId);
-  if(prev!==undefined)delete assignments[prev];
-  assignments[key]=draggingId;
-  draggingId=null;
-  buildTables();buildPool();updateHint();
+function buildTables(){
+  var cont=document.getElementById("tc");
+  cont.innerHTML="";
+  for(var t=1;t<=numT;t++){
+    var block=document.createElement("div");
+    block.style.cssText="display:flex;flex-direction:column;align-items:center;gap:.5rem;";
+    if(numT>1){
+      var lbl=document.createElement("div");
+      lbl.style.cssText="font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);border:1px solid var(--bronze2);border-radius:20px;padding:3px 12px;";
+      lbl.textContent="Table "+t;
+      block.appendChild(lbl);
+    }
+    var tw=shape==="round"?buildRound(t):buildRect(t);
+    block.appendChild(tw);
+    cont.appendChild(block);
+  }
 }
 
-function dropToPool(){
-  if(!draggingId)return;
-  const prev=Object.keys(assignments).find(k=>assignments[k]===draggingId);
-  if(prev!==undefined){delete assignments[prev];buildTables();buildPool();}
-  draggingId=null;
+function buildRound(t){
+  var n=tsizes[t];
+  var mob=window.innerWidth<600;
+  var r;
+  if(mob){r=n<=8?100:n<=12?120:140;}
+  else{r=n<=8?118:n<=12?145:180;}
+  var W=(r+55)*2, H=(r+55)*2, cx=W/2, cy=H/2;
+  var tcW=mob?110:140, tcH=mob?70:90;
+  var wrap=document.createElement("div");
+  wrap.style.cssText="position:relative;width:"+W+"px;height:"+H+"px;";
+  var tc=document.createElement("div");
+  tc.className="tcround";
+  tc.style.cssText="width:"+tcW+"px;height:"+tcH+"px;";
+  tc.innerHTML="<div class='tname' style='font-size:"+(mob?12:14)+"px'>Bucherer<br>Dinner</div><div class='tdate'>1 Oct 2026</div>";
+  wrap.appendChild(tc);
+  var sw=mob?72:84, sh=mob?48:54;
+  for(var i=0;i<n;i++){
+    var a=(2*Math.PI*i/n)-Math.PI/2;
+    var x=cx+r*Math.cos(a), y=cy+r*Math.sin(a);
+    wrap.appendChild(makeSeat("t"+t+"_"+i,x-sw/2,y-sh/2,sw,sh,i+1,false));
+  }
+  return wrap;
 }
 
-function removeSeat(key){delete assignments[key];buildTables();buildPool();updateHint();}
-
-function setTableCount(n){
-  numTables=n;
-  // Remove assignments from table 2 seats if switching to 1 table
-  if(n===1){Object.keys(assignments).filter(k=>k.startsWith("t2_")).forEach(k=>delete assignments[k]);}
-  document.getElementById("btn-1table").classList.toggle("active",n===1);
-  document.getElementById("btn-2table").classList.toggle("active",n===2);
-  document.getElementById("t2-ctrl").style.display=n===2?"flex":"none";
-  buildTables();buildPool();updateHint();
+function buildRect(t){
+  var n=tsizes[t];
+  var mob=window.innerWidth<600;
+  var sw=mob?66:78, sh=mob?44:52, gap=mob?8:10;
+  var sideCount=n-2;
+  if(sideCount<0) sideCount=0;
+  var topCount=Math.ceil(sideCount/2);
+  var botCount=Math.floor(sideCount/2);
+  var tableW=Math.max(160,topCount*(sw+gap)+gap);
+  var tableH=mob?80:100;
+  var totalW=tableW+sw*2+gap*4+20;
+  var totalH=tableH+(sh+28)*2+20;
+  var cx=totalW/2, cy=totalH/2;
+  var wrap=document.createElement("div");
+  wrap.style.cssText="position:relative;width:"+totalW+"px;height:"+totalH+"px;";
+  var rt=document.createElement("div");
+  rt.className="tcrect";
+  rt.style.cssText="width:"+tableW+"px;height:"+tableH+"px;";
+  rt.innerHTML="<div class='tname' style='font-size:"+(mob?11:13)+"px'>Bucherer Dinner</div><div class='tdate'>1 Oct 2026</div>";
+  wrap.appendChild(rt);
+  var idx=0;
+  // Head left
+  var lx=cx-tableW/2-sw-gap, ly=cy-sh/2;
+  wrap.appendChild(makeSeat("t"+t+"_"+idx,lx,ly,sw,sh,"Head",true)); idx++;
+  // Head right
+  var rx=cx+tableW/2+gap, ry=cy-sh/2;
+  wrap.appendChild(makeSeat("t"+t+"_"+idx,rx,ry,sw,sh,"Head",true)); idx++;
+  // Top row
+  for(var i=0;i<topCount;i++){
+    var tw2=topCount*(sw+gap)-gap;
+    var sx=cx-tw2/2+i*(sw+gap);
+    var sy=cy-tableH/2-sh-10;
+    wrap.appendChild(makeSeat("t"+t+"_"+idx,sx,sy,sw,sh,idx+1,false)); idx++;
+  }
+  // Bottom row
+  for(var i=0;i<botCount;i++){
+    var bw=botCount*(sw+gap)-gap;
+    var bx=cx-bw/2+i*(sw+gap);
+    var by=cy+tableH/2+10;
+    wrap.appendChild(makeSeat("t"+t+"_"+idx,bx,by,sw,sh,idx+1,false)); idx++;
+  }
+  return wrap;
 }
 
-function changeSeats(tIdx,delta){
-  const cur=tableSizes[tIdx];
-  const next=Math.max(4,Math.min(20,cur+delta));
-  if(next===cur)return;
-  // Remove assignments for seats that no longer exist
-  Object.keys(assignments).filter(k=>k.startsWith("t"+tIdx+"_")).forEach(k=>{
-    const seatN=parseInt(k.split("_")[1]);
-    if(seatN>=next)delete assignments[k];
-  });
-  tableSizes[tIdx]=next;
-  document.getElementById("seats-t"+tIdx).textContent=next;
-  buildTables();buildPool();updateHint();
+function makeSeat(key,x,y,w,h,num,isHead){
+  var gid=asgn[key];
+  var g=null;
+  if(gid){for(var i=0;i<GUESTS.length;i++){if(GUESTS[i].id===gid){g=GUESTS[i];break;}}}
+  var seat=document.createElement("div");
+  var cls="seat"+(isHead?" head":"")+(g?" occ":"")+(selG&&!g?" hl":"");
+  seat.className=cls;
+  seat.style.cssText="left:"+Math.round(x)+"px;top:"+Math.round(y)+"px;width:"+w+"px;height:"+h+"px;";
+  (function(k,gg){
+    seat.onclick=function(){
+      if(selG){tapSeat(k);}
+      else if(gg){unassignSeat(k);}
+    };
+    seat.ondragover=function(e){e.preventDefault();};
+    seat.ondrop=function(e){
+      e.preventDefault();
+      var id=e.dataTransfer.getData("gid");
+      if(id){selG=id;tapSeat(k);}
+    };
+  })(key,gid);
+  var numEl=document.createElement("div");
+  numEl.className="snum";
+  numEl.textContent=isHead?"Head":num;
+  seat.appendChild(numEl);
+  if(g){
+    var stripe=document.createElement("div");
+    stripe.className="sstripe";
+    stripe.style.background=COLORS[g.type]||"#9B8E7E";
+    var cont=document.createElement("div");
+    cont.className="scont";
+    cont.innerHTML="<div class='sname'>"+g.name+(g.veg?"<span class='svd'></span>":"")+"</div><div class='sco'>"+(g.company||"&nbsp;")+"</div>";
+    var rm=document.createElement("button");
+    rm.className="rmv";rm.textContent="×";
+    (function(k){rm.onclick=function(e){remSeat(k,e);};})(key);
+    seat.appendChild(stripe);seat.appendChild(cont);seat.appendChild(rm);
+  } else {
+    var lbl=document.createElement("div");
+    lbl.className="selbl";
+    lbl.textContent=selG?"tap to place":"empty";
+    seat.appendChild(lbl);
+  }
+  return seat;
 }
-
-function resetAll(){assignments={};buildTables();buildPool();updateHint();}
 
 function updateStats(){
-  const s=Object.keys(assignments).length;
-  document.getElementById("stat-seated").textContent=s;
-  document.getElementById("stat-unassigned").textContent=17-s;
+  var s=Object.keys(asgn).length;
+  document.getElementById("ss").textContent=s;
+  document.getElementById("su").textContent=17-s;
 }
 
 function updateHint(){
-  document.getElementById("drag-hint").style.opacity=Object.keys(assignments).length>=17?"0":"1";
+  var h=document.getElementById("thint");
+  if(!h) return;
+  if(selG){
+    var g=null;
+    for(var i=0;i<GUESTS.length;i++){if(GUESTS[i].id===selG){g=GUESTS[i];break;}}
+    h.textContent=(g?g.name:"Guest")+" selected — tap a seat";
+    h.style.fontWeight="500";
+  } else {
+    h.textContent="Tap a guest to select, then tap any seat";
+    h.style.fontWeight="300";
+  }
 }
 
-buildTables();buildPool();
+window.addEventListener("resize",function(){buildTables();});
+buildPool();
+buildTables();
 </script>
 </body>
 </html>
